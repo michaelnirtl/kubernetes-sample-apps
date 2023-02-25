@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: game
+  name: game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: game
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: game
+    spec:
+      containers:
+      - image: micnir/game-2048:v1
+        name: game-2048
+        ports:
+          - containerPort: 8080
+        resources: {}
+status: {}
